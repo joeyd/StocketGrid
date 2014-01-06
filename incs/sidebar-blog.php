@@ -1,5 +1,5 @@
-<div id="blog-sidebar">
+<aside id="blog-sidebar">
     <ul>
       <?php if ( ! dynamic_sidebar( 'blog-widget-area' ) ) :?><?php endif;?>
     </ul>
-</div>
+</aside>

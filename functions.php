@@ -6,7 +6,6 @@ add_editor_style('editorstyle.css');
 add_theme_support('post-thumbnails');
 add_filter( 'body_class', 'add_slug_to_body_class' );
 add_action( 'wp_enqueue_scripts', 'script_enqueuer' );
-add_action( 'widgets_init', 'nology_widgets_init' );
 add_filter('widget_text', 'do_shortcode');
 
 // Load Styles/Scripts
@@ -68,6 +67,7 @@ function nology_widgets_init() {
 		'after_title' => '</h3>',
 		));
 }
+add_action( 'widgets_init', 'nology_widgets_init' );
 
 // Additional Functions
 //---------------------------------------------
