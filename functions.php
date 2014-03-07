@@ -1,26 +1,25 @@
 <?php
 
-// Support/actions/filters
+// Support/filters
 //---------------------------------------------
 add_editor_style('editorstyle.css');
 add_theme_support('post-thumbnails');
 add_filter( 'body_class', 'add_slug_to_body_class' );
-add_action( 'wp_enqueue_scripts', 'script_enqueuer' );
 add_filter('widget_text', 'do_shortcode');
 
 // Load Styles/Scripts
 //---------------------------------------------
 
 function script_enqueuer() {
-	wp_register_script( 'site', get_template_directory_uri().'/js/site.js', array( 'jquery' ) );
+	wp_register_script( 'site', get_template_directory_uri().'/js/site.js', array( 'jquery' ), '1.0', true );
 	wp_enqueue_script( 'site' );
 
-	wp_register_script( 'vids', get_template_directory_uri().'/js/fitvids.js', array( 'jquery' ) );
-	wp_enqueue_script( 'vids' );
-
-	wp_register_style( 'screen', get_template_directory_uri().'/style.css', '', '', 'all' );
+	wp_register_style( 'screen', get_template_directory_uri().'/style.css', '', '1.0', 'all' );
 	wp_enqueue_style( 'screen' );
 }
+add_action( 'wp_enqueue_scripts', 'script_enqueuer' );
+
+
 
 // Define Menus
 //---------------------------------------------

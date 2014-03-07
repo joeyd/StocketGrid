@@ -1,0 +1,76 @@
+/*!
+Theme Name:   StocketGrid
+Theme URI:    http://www.nologyinteractive.com
+Description:  Naked with PocketGird
+Version:    2.0
+Author:     Joey Durham
+Author URI:   http://www.nologyinteractive.com
+Tags:       clean, modern
+*/
+
+@import "reset.less";
+@import "grid.less";
+@import "defaults.less";
+@import "forms.less";
+@import "tables.less";
+@import "wordpress.less";
+
+
+
+
+/* If IE 7/6 is to be supported then uncomment
+__________________________________________________*/
+
+/* .row, .col, .row:after, .col:after, .row:before, .col:before {
+    *behavior: url(../js/boxsizing.htc);
+} */
+
+/*!
+Site Styles
+__________________________________________________*/
+
+/*specify desktop width*/
+
+.container { margin-left:auto;margin-right:auto; width: 960px; }
+
+/* specify widths for your grid classes
+.left {width:30%;}
+.main {width:70%;}
+*/
+
+// .header { width: 50%; background: #eee;}
+// .nav { width: 50%; background: #eee;}
+
+/* Media Queries
+__________________________________________________*/
+
+/* Smaller than standard 960 (devices and browsers) */
+@media only screen and (max-width: 959px) {}
+
+/* Tablet Portrait size to standard 960 (devices and browsers) */
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+  .container { width: 768px; }
+}
+
+/* All Mobile Sizes (devices and browser) */
+@media only screen and (max-width: 767px) {}
+
+/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  .container { width: 480px; }
+}
+
+/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+@media only screen and (max-width: 479px) {
+  .container { width: 100%; }
+    /* makes WP align styles centered on small screens*/
+    .alignright, div.alignright { display: block; margin: 5px auto 5px auto; }
+    .alignleft, div.alignleft { display: block; margin: 5px auto 5px auto; }
+    a img.alignright {float:none; display: block;margin-left: auto;margin-right: auto;height: auto;}
+    a img.alignleft {float:none; display: block;margin-left: auto;margin-right: auto;height: auto;}
+    img.alignright {float:none; display: block;margin-left: auto;margin-right: auto;height: auto}
+    img.alignleft {float:none; display: block;margin-left: auto;margin-right: auto;height: auto}
+    .wp-caption { float:none; margin: 25px auto 5px auto; max-width:96%;}
+    .wp-caption .alignleft { float:none; display: block; margin: 25px auto 5px auto; }
+    .wp-caption .alignright { float:none; display: block; margin: 25px auto 5px auto; }
+}
