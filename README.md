@@ -1,7 +1,7 @@
 StocketGrid
 ===========
 
-WordPress Theme Based on Starkers and Skeleton
+WordPress Theme Based on Starkers, Skeleton and LESS.
 
 A personal theme... And also a work in progress...
 
