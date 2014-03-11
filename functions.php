@@ -2,12 +2,14 @@
 
 // Support/filters
 //---------------------------------------------
+//---------------------------------------------
 add_editor_style('editorstyle.css');
 add_theme_support('post-thumbnails');
 add_filter( 'body_class', 'add_slug_to_body_class' );
 add_filter('widget_text', 'do_shortcode');
 
 // Load Styles/Scripts
+//---------------------------------------------
 //---------------------------------------------
 
 function script_enqueuer() {
@@ -22,6 +24,7 @@ add_action( 'wp_enqueue_scripts', 'script_enqueuer' );
 
 
 // Define Menus
+//---------------------------------------------
 //---------------------------------------------
 
 //register multiple menus
@@ -39,9 +42,11 @@ add_action( 'wp_enqueue_scripts', 'script_enqueuer' );
 
 // Shortcodes
 //---------------------------------------------
+//---------------------------------------------
 
 
 // Define Sidebars
+//---------------------------------------------
 //---------------------------------------------
 
 function nology_widgets_init() {
@@ -68,7 +73,9 @@ function nology_widgets_init() {
 }
 add_action( 'widgets_init', 'nology_widgets_init' );
 
+
 // Additional Functions
+//---------------------------------------------
 //---------------------------------------------
 
 // If using responsive nav pattern
@@ -78,7 +85,6 @@ add_action( 'widgets_init', 'nology_widgets_init' );
 // }
 // add_filter('wp_page_menu','add_menuclass');
 
-
 //if using BE Subpages Plugin
 // function be_subpages_menu_order( $args ) {
 // 	$args['sort_column'] = 'menu_order';
@@ -86,8 +92,78 @@ add_action( 'widgets_init', 'nology_widgets_init' );
 // }
 // add_filter( 'be_subpages_widget_args', 'be_subpages_menu_order' );
 
+// Define CPTs
+//---------------------------------------------
+//---------------------------------------------
+
+// add_action('init', 'nology_register_cpt_news');
+// function nology_register_cpt_news() {
+// 	register_post_type('news', array(
+// 		'label' => 'News',
+// 		'description' => '',
+// 		'public' => true,
+// 		'show_ui' => true,
+// 		'show_in_menu' => true,
+// 		'capability_type' => 'post',
+// 		'map_meta_cap' => true,
+// 		'hierarchical' => false,
+// 		'rewrite' => array('slug' => 'news', 'with_front' => true),
+// 		'query_var' => true,
+// 		'has_archive' => true,
+// 		'supports' => array('title','editor','excerpt','trackbacks','custom-fields','comments','revisions','thumbnail','author','page-attributes','post-formats'),
+// 		'labels' => array (
+// 		  'name' => 'News',
+// 		  'singular_name' => 'News',
+// 		  'menu_name' => 'News',
+// 		  'add_new' => 'Add News',
+// 		  'add_new_item' => 'Add New News',
+// 		  'edit' => 'Edit',
+// 		  'edit_item' => 'Edit News',
+// 		  'new_item' => 'New News',
+// 		  'view' => 'View News',
+// 		  'view_item' => 'View News',
+// 		  'search_items' => 'Search News',
+// 		  'not_found' => 'No News Found',
+// 		  'not_found_in_trash' => 'No News Found in Trash',
+// 		  'parent' => 'Parent News',
+// 	))
+// ); }
+
+// Define Taxonomies
+//---------------------------------------------
+//---------------------------------------------
+
+// add_action('init', 'nology_register_mylist');
+// function nology_register_mylist() {
+// 	register_taxonomy( 'mylist',array (
+// 	  0 => 'cpt_name',
+// 	  //1 => 'cpt_name',
+// 	),
+// 		array( 'hierarchical' => false,
+// 			'label' => 'My List',
+// 			'show_ui' => true,
+// 			'query_var' => true,
+// 			'show_admin_column' => false,
+// 			'labels' => array (
+// 		  'search_items' => 'My List',
+// 		  'popular_items' => '',
+// 		  'all_items' => '',
+// 		  'parent_item' => '',
+// 		  'parent_item_colon' => '',
+// 		  'edit_item' => '',
+// 		  'update_item' => '',
+// 		  'add_new_item' => '',
+// 		  'new_item_name' => '',
+// 		  'separate_items_with_commas' => '',
+// 		  'add_or_remove_items' => '',
+// 		  'choose_from_most_used' => '',
+// 		)
+// 	) );
+// }
+
 
 // Based on Starkers' Utilities/Functions
+//---------------------------------------------
 //---------------------------------------------
 
 function get_template_parts( $parts = array() ) {

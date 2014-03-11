@@ -3,56 +3,53 @@ Defaults
 __________________________________________________
 */
  body {
-    background:#fff;
-    font:16px/20px HelveticaNeue, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color:#444;
+    background:@body-bg;
+    font:@font-size-base/@line-height-base @font-family-sans-serif;
+    color:@text-color;
     -webkit-font-smoothing:antialiased;
     -webkit-text-size-adjust:100%
 }
 a, a:visited {
-    color:#1783FB;
+    color:@link-color;
     text-decoration:none;
     outline:0
 }
 a:hover, a:focus {
-    color:#555
+    color:@link-hover-color
 }
 h1, h2, h3, h4, h5, h6 {
-    font-weight:400
+    font-weight:@headings-font-weight;
+    font-family: @headings-font-family;
+    margin-bottom:20px;
+    color: @headings-color
 }
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
     font-weight:inherit;
-    text-decoration:none
+    text-decoration:none;
 }
 h1 {
-    font-size:30px;
-    line-height:36px;
-    margin-bottom:20px
+    font-size:@font-size-h1;
+    line-height:@headings-line-height;
 }
 h2 {
-    font-size:22px;
-    line-height:30px;
-    margin-bottom:20px
+    font-size:@font-size-h2;
+    line-height:@headings-line-height;
 }
 h3 {
-    font-size:18px;
-    line-height:24px;
-    margin-bottom:20px
+    font-size:@font-size-h3;
+    line-height:@headings-line-height;
 }
 h4 {
-    font-size:14px;
-    line-height:18px;
-    margin-bottom:20px
+    font-size:@font-size-h4;
+    line-height:@headings-line-height;
 }
 h5 {
-    font-size:11px;
-    line-height:14px;
-    margin-bottom:20px
+    font-size:@font-size-h5;
+    line-height:@headings-line-height;
 }
 h6 {
-    font-size:10px;
-    line-height:12px;
-    margin-bottom:20px
+    font-size:@font-size-h6;
+    line-height:@headings-line-height;
 }
 p {
     margin:0 0 20px
@@ -72,12 +69,12 @@ cite {
 hr {
     margin:20px 0;
     border:0;
-    border-top:1px solid #ccc;
-    border-bottom:1px solid #eee
+    border-top:1px solid @gray-light;
+    border-bottom:1px solid @gray-lighter
 }
 abbr[title], abbr[data-original-title] {
     cursor:help;
-    border-bottom:1px dotted #999
+    border-bottom:1px dotted @gray-light
 }
 abbr.initialism {
     font-size:90%;
@@ -117,12 +114,12 @@ dd {
 blockquote {
     padding:15px;
     margin:0 0 20px;
-    border-left:5px solid #ddd;
-    border-right:1px solid #ddd;
-    border-top:1px solid #ddd;
-    border-bottom:1px solid #ddd;
+    border-left:5px solid @gray-light;
+    border-right:1px solid @gray-light;
+    border-top:1px solid @gray-light;
+    border-bottom:1px solid @gray-light;
     font-style:italic;
-    background:#f7f7f7
+    background:@gray-lighter
 }
 blockquote p {
     margin-bottom:0;
@@ -142,7 +139,7 @@ blockquote.pull-right {
     float:right;
     padding-right:15px;
     padding-left:0;
-    border-right:5px solid #eee;
+    border-right:5px solid @gray-lighter;
     border-left:0
 }
 blockquote.pull-right p, blockquote.pull-right small {
