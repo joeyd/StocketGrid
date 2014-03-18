@@ -26,7 +26,6 @@
 @link-color:            @brand-primary;
 @link-hover-color:      darken(@link-color, 15%);
 
-
 //== Typography
 //
 //## Font, line-height, and color for body text, headings, and more.
@@ -58,3 +57,45 @@
 @headings-font-weight:    500;
 @headings-line-height:    1.1;
 @headings-color:          inherit;
+
+// Mixins
+// --------------------------------------------------
+
+.border-radius(@radius: 4px) {
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+          border-radius: @radius;
+}
+
+/* .transition(all,2s); */
+.transition(@what: all, @time: 0.2s, @transition: ease-in-out) {
+  -webkit-transition: @what @time @transition;
+  -moz-transition:    @what @time @transition;
+  -ms-transition:     @what @time @transition;
+  -o-transition:      @what @time @transition;
+  transition:         @what @time @transition;
+}
+
+/* .css-gradient(#dfdfdf,#f8f8f8); */
+.css-gradient(@from: #dfdfdf, @to: #f8f8f8) {
+  background-color: @to;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(@from), to(@to));
+  background-image: -webkit-linear-gradient(top, @from, @to);
+  background-image: -moz-linear-gradient(top, @from, @to);
+  background-image: -o-linear-gradient(top, @from, @to);
+  background-image: linear-gradient(to bottom, @from, @to);
+}
+
+/* .boxShadow(0,0,4px,0,#444); */
+.boxShadow(@x: 0, @y: 0, @radius: 4px, @spread: 0, @color: rgba(0,0,0,0.5)) when (isnumber(@x)) {
+  -webkit-box-shadow: @x @y @radius @spread @color;
+     -moz-box-shadow: @x @y @radius @spread @color;
+      box-shadow: @x @y @radius @spread @color;
+}
+
+/* .boxShadow(none); */
+.boxShadow(@x: none) when (iskeyword(@x)) {
+  -webkit-box-shadow: @x;
+     -moz-box-shadow: @x;
+      box-shadow: @x;
+}
