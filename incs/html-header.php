@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <head class="no-js">
-<title><?php bloginfo( 'name' ); ?><?php wp_title( '|' ); ?></title>
+<title><?php wp_title( '|' ); ?></title>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,11 +9,14 @@
 <link rel="apple-touch-icon" href="<?php echo get_stylesheet_directory_uri(); ?>/images/apple-touch-icon.png">
 <link rel="apple-touch-icon" sizes="72x72" href="<?php echo get_stylesheet_directory_uri(); ?>/images/apple-touch-icon-72x72.png">
 <link rel="apple-touch-icon" sizes="114x114" href="<?php echo get_stylesheet_directory_uri(); ?>/images/apple-touch-icon-114x114.png">
+<!--[if lte IE 8]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
 <!--[if lt IE 8]>
-	<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <p class="browsehappy">It looks like you're using an insecure version of Internet Explorer. Using an outdated browser makes your computer unsafe. On Windows XP, you are unable to update to the latest version. For the best experience on the web, we suggest you <a href="http://browsehappy.com">try a new browser</a>.</p>
 <![endif]-->
 <div class="container">
 

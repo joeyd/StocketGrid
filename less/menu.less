@@ -11,8 +11,24 @@ __________________________________________________
 // li.current_page_item,
 // li.current_page_ancestor
 
+// Defaults
 .nav {
-  ul {list-style: none;margin: 0; padding: 0;
-    li {float: left;padding:10px 20px;}
+  ul {list-style: none;margin: 0; padding: 0; position: relative; display: inline-table; z-index: 999; float: left; width: auto; height: auto;
+    li {margin: 0; padding: 0;font-weight: 700; font-size: 14px; float: left;
+      ul {display:none; position: absolute;
+        li {display: block;width:250px;}
+      }
+    }
   }
 }
+
+// ul li {
+//   a { background-color: @brand-primary; padding:30px 18px; color: @white; display: block;}
+//   a:hover {background-color: @brand-tertiary;}
+//   ul {
+//     li { float:none; margin-top: 0px;
+//       a { padding: 5px 10px; font-weight: normal; }
+//       a:hover {color: @brand-secondary;}
+//     }
+//   }
+// }
