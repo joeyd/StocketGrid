@@ -12,14 +12,14 @@ add_filter('widget_text', 'do_shortcode');
 //---------------------------------------------
 //---------------------------------------------
 
-function script_enqueuer() {
+function nolo_sg_script_enqueuer() {
 	wp_register_script( 'site', get_template_directory_uri().'/js/site.js', array( 'jquery' ), '1.0', true );
 	wp_enqueue_script( 'site' );
 
 	wp_register_style( 'screen', get_template_directory_uri().'/style.css', '', '1.0', 'all' );
 	wp_enqueue_style( 'screen' );
 }
-add_action( 'wp_enqueue_scripts', 'script_enqueuer' );
+add_action( 'wp_enqueue_scripts', 'nolo_sg_script_enqueuer' );
 
 
 
@@ -49,7 +49,7 @@ add_action( 'wp_enqueue_scripts', 'script_enqueuer' );
 //---------------------------------------------
 //---------------------------------------------
 
-function nology_widgets_init() {
+function nology_sg_widgets_init() {
 
 	register_sidebar(array(
 		'name' => __( 'Pages Sidebar' ),
@@ -71,14 +71,14 @@ function nology_widgets_init() {
 		'after_title' => '</h3>',
 		));
 }
-add_action( 'widgets_init', 'nology_widgets_init' );
+add_action( 'widgets_init', 'nology_sg_widgets_init' );
 
 
 // Additional Functions
 //---------------------------------------------
 //---------------------------------------------
 
-// If using responsive nav pattern
+// If using the responsive nav pattern
 
 // function add_menuclass($ulclass) {
 // return preg_replace('/<ul>/', '<ul class="nav">', $ulclass, 1);
@@ -86,11 +86,13 @@ add_action( 'widgets_init', 'nology_widgets_init' );
 // add_filter('wp_page_menu','add_menuclass');
 
 //if using BE Subpages Plugin
+
 // function be_subpages_menu_order( $args ) {
 // 	$args['sort_column'] = 'menu_order';
 // 	return $args;
 // }
 // add_filter( 'be_subpages_widget_args', 'be_subpages_menu_order' );
+
 
 // Define CPTs
 //---------------------------------------------
@@ -192,17 +194,11 @@ function get_category_id( $cat_name ){
 	return $term->term_id;
 }
 
-function starkers_comment( $comment, $args, $depth ) {
-	$GLOBALS['comment'] = $comment;
-	?>
-	<?php if ( $comment->comment_approved == '1' ): ?>
-	<li>
-		<?php echo get_avatar( $comment ); ?>
-		<h4><?php comment_author_link() ?></h4>
-		<time><a href="#comment-<?php comment_ID() ?>" pubdate><?php comment_date() ?> at <?php comment_time() ?></a></time>
-		<div class="clear"></div>
-		<article id="comment-<?php comment_ID() ?>">
-			<?php comment_text() ?>
-		</article>
-	<?php endif;
+function get_page_id_from_path( $path ) {
+	$page = get_page_by_path( $path );
+	if( $page ) {
+		return $page->ID;
+	} else {
+		return null;
+	};
 }
