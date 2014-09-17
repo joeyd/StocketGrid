@@ -24,22 +24,28 @@ form ul li:after {
 }
 fieldset {
     margin:0;
-    padding:1.5em
+    padding:1.5em;
+    border:1px solid @gray-light;
 }
+legend {font-weight: 700;}
 label {
-    display:block
+  display: inline-block;
+  max-width: 100%; // Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141)
+  margin-bottom: 5px;
+  font-weight: bold;
 }
 input:focus, textarea:focus, select:focus {
     outline:0
 }
 input[type=text], input[type=url], input[type=email], input[type=password], input[type=search], input[type=number], input[type=date], input[type=month], input[type=week], input[type=time], input[type=datetime], input[type=datetime-local], input[type=tel], textarea {
-    padding:.5em;
-    border:1px solid @gray-lighter;
+    padding:6px;
+    border:1px solid @gray-light;
     .border-radius(2px);
-    background-color:@white
+    background-color:@white;
+    width:100%;
 }
 select {
-    border:1px solid @gray-lighter
+    border:1px solid @gray-light
 }
 input[type=range], input[type=color] {
     vertical-align:middle;
@@ -63,10 +69,17 @@ input[type=submit], input[type=button], button {
     color:@white;
     border:0;
     background:@link-color;
-    padding:8px 15px;
+    padding:7px 15px;
     .border-radius(2px);
     cursor:pointer
 }
 input[type=submit]:hover, input[type=button]:hover, button:hover {
     background:@link-hover-color
 }
+
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+

@@ -98,70 +98,6 @@ add_action( 'widgets_init', 'nology_sg_widgets_init' );
 //---------------------------------------------
 //---------------------------------------------
 
-// add_action('init', 'nology_register_cpt_news');
-// function nology_register_cpt_news() {
-// 	register_post_type('news', array(
-// 		'label' => 'News',
-// 		'description' => '',
-// 		'public' => true,
-// 		'show_ui' => true,
-// 		'show_in_menu' => true,
-// 		'capability_type' => 'post',
-// 		'map_meta_cap' => true,
-// 		'hierarchical' => false,
-// 		'rewrite' => array('slug' => 'news', 'with_front' => true),
-// 		'query_var' => true,
-// 		'has_archive' => true,
-// 		'supports' => array('title','editor','excerpt','trackbacks','custom-fields','comments','revisions','thumbnail','author','page-attributes','post-formats'),
-// 		'labels' => array (
-// 		  'name' => 'News',
-// 		  'singular_name' => 'News',
-// 		  'menu_name' => 'News',
-// 		  'add_new' => 'Add News',
-// 		  'add_new_item' => 'Add New News',
-// 		  'edit' => 'Edit',
-// 		  'edit_item' => 'Edit News',
-// 		  'new_item' => 'New News',
-// 		  'view' => 'View News',
-// 		  'view_item' => 'View News',
-// 		  'search_items' => 'Search News',
-// 		  'not_found' => 'No News Found',
-// 		  'not_found_in_trash' => 'No News Found in Trash',
-// 		  'parent' => 'Parent News',
-// 	))
-// ); }
-
-// Define Taxonomies
-//---------------------------------------------
-//---------------------------------------------
-
-// add_action('init', 'nology_register_mylist');
-// function nology_register_mylist() {
-// 	register_taxonomy( 'mylist',array (
-// 	  0 => 'cpt_name',
-// 	  //1 => 'cpt_name',
-// 	),
-// 		array( 'hierarchical' => false,
-// 			'label' => 'My List',
-// 			'show_ui' => true,
-// 			'query_var' => true,
-// 			'show_admin_column' => false,
-// 			'labels' => array (
-// 		  'search_items' => 'My List',
-// 		  'popular_items' => '',
-// 		  'all_items' => '',
-// 		  'parent_item' => '',
-// 		  'parent_item_colon' => '',
-// 		  'edit_item' => '',
-// 		  'update_item' => '',
-// 		  'add_new_item' => '',
-// 		  'new_item_name' => '',
-// 		  'separate_items_with_commas' => '',
-// 		  'add_or_remove_items' => '',
-// 		  'choose_from_most_used' => '',
-// 		)
-// 	) );
-// }
 
 
 // Based on Starkers' Utilities/Functions
@@ -202,3 +138,17 @@ function get_page_id_from_path( $path ) {
 		return null;
 	};
 }
+
+function starkers_comment( $comment, $args, $depth ) {
+		$GLOBALS['comment'] = $comment;
+		?>
+		<?php if ( $comment->comment_approved == '1' ): ?>
+		<li>
+			<article id="comment-<?php comment_ID() ?>">
+				<?php echo get_avatar( $comment ); ?>
+				<h4><?php comment_author_link() ?></h4>
+				<time><a href="#comment-<?php comment_ID() ?>" pubdate><?php comment_date() ?> at <?php comment_time() ?></a></time>
+				<?php comment_text() ?>
+			</article>
+		<?php endif;
+	}

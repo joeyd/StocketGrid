@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <head class="no-js">
-<title><?php wp_title( '|' ); ?></title>
+<title><?php wp_title(' | ', true, 'right'); ?> <?php bloginfo('name'); ?></title>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,5 +18,5 @@
 <!--[if lt IE 8]>
   <p class="browsehappy">It looks like you're using an insecure version of Internet Explorer. Using an outdated browser makes your computer unsafe. On Windows XP, you are unable to update to the latest version. For the best experience on the web, we suggest you <a href="http://browsehappy.com">try a new browser</a>.</p>
 <![endif]-->
-<div class="container">
+<div class="container row">
 
