@@ -17,31 +17,36 @@ Tags:       clean, modern
 @import "forms.less";
 @import "tables.less";
 @import "wordpress.less";
+//@import "font-awesome.min.less";
 /*!
 Site Styles
 __________________________________________________*/
 
+// See http://arnaudleray.github.io/pocketgrid/ for grid usage
+
 
 .container {max-width: 960px; margin: 0 auto;}
-.searchform {float: none;}
 
 /* Media Queries
 __________________________________________________*/
 
-/* Smaller than standard 960 (devices and browsers) */
-@media only screen and (max-width: 959px) {}
 
-/* Tablet Portrait size to standard 960 (devices and browsers) */
-@media only screen and (min-width: 768px) and (max-width: 959px) {}
+.left, .content {
+    padding: 20px 40px 20px 20px;
+}
 
-/* All Mobile Sizes (devices and browser) */
-@media only screen and (max-width: 767px) {}
+/* Desktop version */
 
-/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
-@media only screen and (min-width: 480px) and (max-width: 767px) {}
+.left {
+    width: 30%;
+}
+.content {
+    width: 70%;
+}
 
-/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+
 @media only screen and (max-width: 479px) {
+// center all alignments
   .alignright, div.alignright { display: block; margin: 5px auto 5px auto; }
   .alignleft, div.alignleft { display: block; margin: 5px auto 5px auto; }
   a img.alignright {float:none; display: block;margin-left: auto;margin-right: auto;height: auto;}
