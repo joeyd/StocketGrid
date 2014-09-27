@@ -3,7 +3,7 @@
   <?php //bloginfo( 'description' ); ?>
   <?php get_search_form(); ?>
 </header>
-<nav class="nav">
+<nav class="nav clear">
   <?php wp_nav_menu( array(  'theme_location' => 'primary' ) ); ?>
 </nav>
-<div class="clear"></div>
+

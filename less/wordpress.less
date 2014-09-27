@@ -3,7 +3,6 @@ Some Wordpress Core
 __________________________________________________
 */
 
-
  img {
     -ms-interpolation-mode:bicubic!important
 }
@@ -203,6 +202,32 @@ img.aligncenter {
     background-color:@body-bg
 }
 
+#searchform  {
+    max-width: 300px;
+        label {display: none;}
+        #s {
+            display: inline;
+            width: 60%;
+        }
+        #searchsubmit {
+            display: inline;
+            width: 38%;
+    }
+}
+
+
+@media only screen and (max-width: 479px) {
+// center all alignments on phones
+  .alignright, div.alignright { display: block; margin: 5px auto 5px auto; }
+  .alignleft, div.alignleft { display: block; margin: 5px auto 5px auto; }
+  a img.alignright {float:none; display: block;margin-left: auto;margin-right: auto;height: auto;}
+  a img.alignleft {float:none; display: block;margin-left: auto;margin-right: auto;height: auto;}
+  img.alignright {float:none; display: block;margin-left: auto;margin-right: auto;height: auto}
+  img.alignleft {float:none; display: block;margin-left: auto;margin-right: auto;height: auto}
+  .wp-caption { float:none; margin: 25px auto 5px auto; max-width:96%;}
+  .wp-caption .alignleft { float:none; display: block; margin: 25px auto 5px auto; }
+  .wp-caption .alignright { float:none; display: block; margin: 25px auto 5px auto; }
+}
 
 // if needed...
 

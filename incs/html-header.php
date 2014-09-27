@@ -1,4 +1,8 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
 <head class="no-js">
 <title><?php wp_title(' | ', true, 'right'); ?> <?php bloginfo('name'); ?></title>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
@@ -10,7 +14,7 @@
 <link rel="apple-touch-icon" sizes="72x72" href="<?php echo get_stylesheet_directory_uri(); ?>/images/apple-touch-icon-72x72.png">
 <link rel="apple-touch-icon" sizes="114x114" href="<?php echo get_stylesheet_directory_uri(); ?>/images/apple-touch-icon-114x114.png">
 <!--[if lte IE 8]>
-<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 <?php wp_head(); ?>
 </head>

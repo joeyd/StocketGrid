@@ -7,20 +7,23 @@ add_editor_style('editorstyle.css');
 add_theme_support('post-thumbnails');
 add_filter( 'body_class', 'add_slug_to_body_class' );
 add_filter('widget_text', 'do_shortcode');
+//add_image_size( $name, $width, $height, $crop );
 
 // Load Styles/Scripts
 //---------------------------------------------
 //---------------------------------------------
 
 function nolo_sg_script_enqueuer() {
-	wp_register_script( 'site', get_template_directory_uri().'/js/site.js', array( 'jquery' ), '1.0', true );
+	wp_register_script( 'fitvids', get_template_directory_uri().'/js/plugins/fitvids.js', array( 'jquery' ), '1.0', true );
+	wp_enqueue_script( 'fitvids' );
+
+	wp_register_script( 'site', get_template_directory_uri().'/js/site.js', array( 'fitvids' ), '1.0', true );
 	wp_enqueue_script( 'site' );
 
 	wp_register_style( 'screen', get_template_directory_uri().'/style.css', '', '1.0', 'all' );
 	wp_enqueue_style( 'screen' );
 }
 add_action( 'wp_enqueue_scripts', 'nolo_sg_script_enqueuer' );
-
 
 
 // Define Menus
