@@ -9,11 +9,11 @@
 // Set @total-width to 100% for a fluid layout
 @total-width: @gridsystem-width;
 
-// ie 6/7
+// IE 6/7
 // @min-width: 960;
 // @correction: 0.5 / @min-width * 100 * 1%;
 
-.clear() {
+.clearfix() {
   *zoom:1;
 
   &:before,
@@ -28,20 +28,24 @@
 
 body {
   width: 100%;
-  .clear;
+  .clearfix;
 }
 
 .row(@columns:@columns) {
   display: block;
   width: @total-width*((@gutter-width + @gridsystem-width)/@gridsystem-width);
   margin: 0 @total-width*(((@gutter-width*.5)/@gridsystem-width)*-1);
-  .clear;
+  // *width: @total-width*((@gutter-width + @gridsystem-width)/@gridsystem-width)-@correction;
+  // *margin: 0 @total-width*(((@gutter-width*.5)/@gridsystem-width)*-1)-@correction;
+  .clearfix;
 }
 .col(@x,@columns:@columns) {
   display: inline;
   float: left;
   width: @total-width*((((@gutter-width+@column-width)*@x)-@gutter-width) / @gridsystem-width);
   margin: 0 @total-width*((@gutter-width*.5)/@gridsystem-width);
+  // *width: @total-width*((((@gutter-width+@column-width)*@x)-@gutter-width) / @gridsystem-width)-@correction;
+  // *margin: 0 @total-width*((@gutter-width*.5)/@gridsystem-width)-@correction;
 }
 .push(@offset:1) {
   margin-left: @total-width*(((@gutter-width+@column-width)*@offset) / @gridsystem-width) + @total-width*((@gutter-width*.5)/@gridsystem-width);
