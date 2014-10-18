@@ -22,5 +22,5 @@
 <!--[if lt IE 8]>
   <p class="browsehappy">It looks like you're using an insecure version of Internet Explorer. Using an outdated browser makes your computer unsafe. On Windows XP, you are unable to update to the latest version. For the best experience on the web, we suggest you <a href="http://browsehappy.com">try a new browser</a>.</p>
 <![endif]-->
-<div class="container row">
+<div class="container">
 
