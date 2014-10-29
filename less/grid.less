@@ -1,4 +1,4 @@
-//semantic
+//semantic.gs 1.2
 @column-width: 60;
 @gutter-width: 20;
 @columns: 12;
@@ -54,15 +54,23 @@ body {
   margin-right: @total-width*(((@gutter-width+@column-width)*@offset) / @gridsystem-width) + @total-width*((@gutter-width*.5)/@gridsystem-width);
 }
 
-.clear {
-    *zoom:1;
+.pull-right {
+  float: right !important;
+}
+.pull-left {
+  float: left !important;
+}
 
-    &:before,
-    &:after {
-        content:"";
-        display:table;
-    }
-    &:after {
-        clear:both;
-    }
+.center-block() {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.center-block {
+  .center-block()
+}
+
+.clear {
+  .clearfix()
 }

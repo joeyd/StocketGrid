@@ -203,18 +203,22 @@ img.aligncenter {
 }
 
 #searchform  {
+    .row(12);
     max-width: 300px;
         label {display: none;}
         #s {
-            display: inline;
-            width: 60%;
+            .col(8);
         }
         #searchsubmit {
-            display: inline;
-            width: 38%;
+            .col(4);
+
     }
+    input[type=submit] {padding: 7px 0px;}
 }
 
+.widget-container {
+    margin-bottom: 20px !important;
+}
 
 @media only screen and (max-width: 479px) {
 // center all alignments on phones
@@ -232,7 +236,7 @@ img.aligncenter {
 // if needed...
 
 #blog-sidebar {
-    margin:0
+    margin: 20px 0;
 }
 #blog-sidebar ul {
     margin:0;
@@ -253,7 +257,7 @@ img.aligncenter {
     margin-left:20px
 }
 #pages-sidebar {
-    margin:0
+    margin: 20px 0;
 }
 #pages-sidebar ul {
     margin:0;

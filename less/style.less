@@ -17,31 +17,30 @@ Tags:       clean, modern
 @import "forms.less";
 @import "tables.less";
 @import "wordpress.less";
+//@import "font-awesome.less";
 
-//@import "font-awesome.min.less";
 
 /*!
 Setup Grid
 __________________________________________________*/
+// Define container width
+.container {max-width: 1140px; margin: 0 auto; overflow: hidden; }
 
-.container {max-width: 1140px; margin: 0 auto; overflow: hidden;}
-
-// Specify the number of columns and set column and gutter widths
-@columns: 12;
-@column-width: 60;
-@gutter-width: 20;
+// Optionally Specify the number of columns and set column and gutter widths
+// @columns: 12;
+// @column-width: 60;
+// @gutter-width: 20;
 
 // Remove the definition below for a pixel-based layout
 @total-width: 100%;
 
 /*
-EXAMPLE USAGE STYLES BELOW - Also see page.php
+EXAMPLE USAGE STYLES BELOW - See page.php and index.php for the example html markup/classes used below.
 __________________________________________________*/
 
 // header
 header, nav {
   .col(12); // 12 defines to span 12 columns (100% width) of .container
-  margin-bottom: 20px;
 }
 
 // main column & sidebar
@@ -58,3 +57,4 @@ header, nav {
     .col(12); // make all defined elements 12 columns (100% width)
   }
 }
+

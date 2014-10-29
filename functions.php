@@ -32,9 +32,9 @@ add_action( 'wp_enqueue_scripts', 'nolo_sg_script_enqueuer' );
 
 //register multiple menus
 // register_nav_menus( array(
-// 		//'blog_pages' => 'Blog Pages',
-// 		'primary' => 'Primary Pages'
-// 	) );
+// 	'blog_pages' => 'Blog Pages',
+// 	'primary' => 'Primary Pages'
+// ) );
 
 // If you want to define a class for your menu
 // function add_menuclass($ulclass) {
@@ -52,7 +52,7 @@ add_action( 'wp_enqueue_scripts', 'nolo_sg_script_enqueuer' );
 //---------------------------------------------
 //---------------------------------------------
 
-function nology_sg_widgets_init() {
+function nology_widgets_init() {
 
 	register_sidebar(array(
 		'name' => __( 'Pages Sidebar' ),
@@ -74,7 +74,7 @@ function nology_sg_widgets_init() {
 		'after_title' => '</h3>',
 		));
 }
-add_action( 'widgets_init', 'nology_sg_widgets_init' );
+add_action( 'widgets_init', 'nology_widgets_init' );
 
 // Additional Functions
 //---------------------------------------------
