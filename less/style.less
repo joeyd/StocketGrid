@@ -19,7 +19,6 @@ Tags:       clean, modern
 @import "wordpress.less";
 //@import "font-awesome.less";
 
-
 /*!
 Setup Grid
 __________________________________________________*/
@@ -27,9 +26,9 @@ __________________________________________________*/
 .container {max-width: 1140px; margin: 0 auto; overflow: hidden; }
 
 // Optionally Specify the number of columns and set column and gutter widths
-// @columns: 12;
-// @column-width: 60;
-// @gutter-width: 20;
+@columns: 12;
+@column-width: 60;
+@gutter-width: 20;
 
 // Remove the definition below for a pixel-based layout
 @total-width: 100%;
@@ -39,7 +38,7 @@ EXAMPLE USAGE STYLES BELOW - See page.php and index.php for the example html mar
 __________________________________________________*/
 
 // header
-header, nav {
+header, nav, footer {
   .col(12); // 12 defines to span 12 columns (100% width) of .container
 }
 

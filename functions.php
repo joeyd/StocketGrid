@@ -20,7 +20,7 @@ function nolo_sg_script_enqueuer() {
 	wp_register_script( 'site', get_template_directory_uri().'/js/site.js', array( 'fitvids' ), '1.0', true );
 	wp_enqueue_script( 'site' );
 
-	wp_register_style( 'screen', get_template_directory_uri().'/style.css', '', '1.0', 'all' );
+	wp_register_style( 'screen', get_template_directory_uri().'/style.css', '', '2.0', 'all' );
 	wp_enqueue_style( 'screen' );
 }
 add_action( 'wp_enqueue_scripts', 'nolo_sg_script_enqueuer' );
@@ -41,6 +41,25 @@ add_action( 'wp_enqueue_scripts', 'nolo_sg_script_enqueuer' );
 // 	return preg_replace('/<ul>/', '<ul class="nav">', $ulclass, 1);
 // }
 // add_filter('wp_page_menu','add_menuclass');
+//
+
+
+// function be_customize_subpage_classes( $classes, $subpage ) {
+// 	global $post;
+//     //$parents = get_post_ancestors( $post );
+// 	$parent = get_page( $id );
+// 	$class = 'parent';
+
+// if( $subpage->ID == $post->ID ) {
+// 	if ( $subpage->ID && $post->post_parent > 0 ) {
+// 	    echo "This is a child page";
+//     	var_dump($subpage->ID);
+//         $classes[] = $class;
+// 	}
+// }
+//     return $classes;
+// }
+// add_filter( 'be_subpages_widget_class', 'be_customize_subpage_classes', 10, 2 );
 
 
 // Shortcodes

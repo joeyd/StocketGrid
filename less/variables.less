@@ -20,7 +20,7 @@
 
 //** Global textual link color.
 @link-color:            @brand-primary;
-@link-hover-color:      darken(@link-color, 15%);
+@link-hover-color:      @brand-secondary; // or something like darken/lighten... darken(@link-color, 15%);
 
 //== Typography
 //
@@ -63,8 +63,6 @@
      -moz-border-radius: @radius;
           border-radius: @radius;
 }
-
-
 
 /* .transition(all,2s); */
 .transition(@what: all, @time: 0.2s, @transition: ease-in-out) {
