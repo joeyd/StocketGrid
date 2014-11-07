@@ -25,6 +25,19 @@ function nolo_sg_script_enqueuer() {
 }
 add_action( 'wp_enqueue_scripts', 'nolo_sg_script_enqueuer' );
 
+// Disable Woocommerce Styles
+//---------------------------------------------
+//---------------------------------------------
+// Remove each style one by one
+// add_filter( 'woocommerce_enqueue_styles', 'wjd_dequeue_woo_styles' );
+// function wjd_dequeue_woo_styles( $enqueue_styles ) {
+// 	unset( $enqueue_styles['woocommerce-general'] );	// Remove the gloss
+// 	unset( $enqueue_styles['woocommerce-layout'] );		// Remove the layout
+// 	unset( $enqueue_styles['woocommerce-smallscreen'] );	// Remove the smallscreen optimisation
+// 	return $enqueue_styles;
+// }
+// Or just remove them all in one line
+//add_filter( 'woocommerce_enqueue_styles', '__return_false' );
 
 // Define Menus
 //---------------------------------------------
@@ -62,6 +75,26 @@ add_action( 'wp_enqueue_scripts', 'nolo_sg_script_enqueuer' );
 // add_filter( 'be_subpages_widget_class', 'be_customize_subpage_classes', 10, 2 );
 
 
+// Additional Menu Functions
+//---------------------------------------------
+//---------------------------------------------
+
+// If using the responsive nav pattern
+
+// function add_menuclass($ulclass) {
+// return preg_replace('/<ul>/', '<ul class="nav">', $ulclass, 1);
+// }
+// add_filter('wp_page_menu','add_menuclass');
+
+//if using BE Subpages Plugin
+
+// function be_subpages_menu_order( $args ) {
+// 	$args['sort_column'] = 'menu_order';
+// 	return $args;
+// }
+// add_filter( 'be_subpages_widget_args', 'be_subpages_menu_order' );
+
+
 // Shortcodes
 //---------------------------------------------
 //---------------------------------------------
@@ -95,24 +128,6 @@ function nology_widgets_init() {
 }
 add_action( 'widgets_init', 'nology_widgets_init' );
 
-// Additional Functions
-//---------------------------------------------
-//---------------------------------------------
-
-// If using the responsive nav pattern
-
-// function add_menuclass($ulclass) {
-// return preg_replace('/<ul>/', '<ul class="nav">', $ulclass, 1);
-// }
-// add_filter('wp_page_menu','add_menuclass');
-
-//if using BE Subpages Plugin
-
-// function be_subpages_menu_order( $args ) {
-// 	$args['sort_column'] = 'menu_order';
-// 	return $args;
-// }
-// add_filter( 'be_subpages_widget_args', 'be_subpages_menu_order' );
 
 
 // Define CPTs
