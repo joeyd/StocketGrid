@@ -1,4 +1,5 @@
 <?php get_template_parts( array( 'incs/html-header', 'incs/header' ) ); ?>
+
 <?php if ( have_posts() ): the_post(); ?>
 
 <h1>Author Archives: <?php echo get_the_author() ; ?></h1>

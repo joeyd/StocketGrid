@@ -1,6 +1,5 @@
 <?php get_template_parts( array( 'incs/html-header', 'incs/header' ) ); ?>
 
-<div class="content">
     <?php if ( have_posts() ): ?>
     <h1>Latest Posts</h1>
     <?php while ( have_posts() ) : the_post(); ?>
@@ -13,10 +12,7 @@
     <?php else: ?>
     <h1>No posts to display</h1>
     <?php endif; ?>
-</div>
 
-<div class="sidebar">
-    <?php get_template_parts( array( 'incs/sidebar-blog' ) ); ?>
-</div>
+    <?php //get_template_parts( array( 'incs/sidebar-blog' ) ); ?>
 
 <?php get_template_parts( array( 'incs/footer','incs/html-footer') ); ?>
