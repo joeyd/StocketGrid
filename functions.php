@@ -9,6 +9,19 @@ add_filter( 'body_class', 'add_slug_to_body_class' );
 add_filter('widget_text', 'do_shortcode');
 //add_image_size( $name, $width, $height, $crop );
 
+
+//---------------------------------------------
+//---------------------------------------------
+// SECURITY NOTE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// If you re not using a security plugin (Sucuri
+// is good) to harden WordPrss, be sure to
+// include the DISALLOW_FILE_EDIT to wp-config.php.
+// >> define( 'DISALLOW_FILE_EDIT', true );
+// END SECURITY NOTE!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//---------------------------------------------
+//---------------------------------------------
+
+
 // Load Styles/Scripts
 //---------------------------------------------
 //---------------------------------------------
