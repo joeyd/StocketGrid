@@ -1,0 +1,126 @@
+/*!
+
+Some Woocommerce Overrides
+__________________________________________________
+*/
+.product {
+    margin-top: 30px;
+}
+
+// Buttons
+// -----------------------------------
+.woocommerce a.button, .woocommerce button.button, .woocommerce input.button,
+.woocommerce #respond input#submit, .woocommerce #content input.button,
+.woocommerce-page a.button, .woocommerce-page button.button, .woocommerce-page input.button,
+.woocommerce-page #respond input#submit, .woocommerce-page #content input.button {
+    border: none;
+    background: none;
+    background: @brand-primary;
+    color: @white;
+    text-shadow: none;
+    white-space: nowrap;
+    display: inline-block;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover, .woocommerce #respond input#submit:hover, .woocommerce #content input.button:hover, .woocommerce-page a.button:hover, .woocommerce-page button.button:hover, .woocommerce-page input.button:hover, .woocommerce-page #respond input#submit:hover, .woocommerce-page #content input.button:hover {
+    background: none;
+    background: @brand-secondary;
+}
+
+.woocommerce a.button:active, .woocommerce button.button:active, .woocommerce input.button:active, .woocommerce #respond input#submit:active, .woocommerce #content input.button:active, .woocommerce-page a.button:active, .woocommerce-page button.button:active, .woocommerce-page input.button:active, .woocommerce-page #respond input#submit:active, .woocommerce-page #content input.button:active {
+    top: 0;
+}
+
+.woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt,
+.woocommerce #respond input#submit.alt, .woocommerce #content input.button.alt,
+.woocommerce-page a.button.alt, .woocommerce-page button.button.alt,
+.woocommerce-page input.button.alt, .woocommerce-page #respond input#submit.alt,
+.woocommerce-page #content input.button.alt {
+    background: none;
+    background: @brand-primary;
+    color: @white;
+    text-shadow: none;
+}
+
+.woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover, .woocommerce #respond input#submit.alt:hover, .woocommerce #content input.button.alt:hover, .woocommerce-page a.button.alt:hover, .woocommerce-page button.button.alt:hover, .woocommerce-page input.button.alt:hover, .woocommerce-page #respond input#submit.alt:hover, .woocommerce-page #content input.button.alt:hover {
+    background: none;
+    background: @brand-secondary;
+    color: @white;
+    text-shadow: none;
+}
+
+.woocommerce a.button:disabled, .woocommerce a.button.disabled, .woocommerce button.button:disabled, .woocommerce button.button.disabled, .woocommerce input.button:disabled, .woocommerce input.button.disabled, .woocommerce #respond input#submit:disabled, .woocommerce #respond input#submit.disabled, .woocommerce #content input.button:disabled, .woocommerce #content input.button.disabled, .woocommerce-page a.button:disabled, .woocommerce-page a.button.disabled, .woocommerce-page button.button:disabled, .woocommerce-page button.button.disabled, .woocommerce-page input.button:disabled, .woocommerce-page input.button.disabled, .woocommerce-page #respond input#submit:disabled, .woocommerce-page #respond input#submit.disabled, .woocommerce-page #content input.button:disabled, .woocommerce-page #content input.button.disabled {
+    color: @white;
+    border: none;
+    background: @brand-primary;
+}
+
+// product images
+// -----------------------------------
+.woocommerce ul.products li.product a img, .woocommerce-page ul.products li.product a img {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+    transition: none
+}
+.woocommerce ul.products li.product a:hover img, .woocommerce-page ul.products li.product a:hover img {
+    box-shadow: none;
+    -webkit-box-shadow: none
+}
+
+// on sale emblem
+// -----------------------------------
+.woocommerce span.onsale, .woocommerce-page span.onsale {
+    line-height: 28px;
+    background: @brand-primary;
+    text-shadow: none;
+    color: @white;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none
+}
+
+// Info Notices
+// -----------------------------------
+.woocommerce .woocommerce-info, .woocommerce-page .woocommerce-info {
+    border-top: 3px solid @brand-primary;
+}
+
+.woocommerce .woocommerce-info:before, .woocommerce-page .woocommerce-info:before {
+    background-color: @brand-primary;
+    content: "i";
+    font-family: Times, Georgia, serif;
+    font-style: italic;
+    line-height: 20px;
+}
+.woocommerce .woocommerce-message:before, .woocommerce .woocommerce-error:before, .woocommerce .woocommerce-info:before, .woocommerce-page .woocommerce-message:before, .woocommerce-page .woocommerce-error:before, .woocommerce-page .woocommerce-info:before {
+    content: "i";
+    height: 2.0em;
+    width: 1.5em;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 1em;
+    font-family: sans-serif;
+    font-size: 1em;
+    line-height: 0.5;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+    padding-top: 1em;
+    -webkit-border-bottom-left-radius: 4px;
+    -webkit-border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
+}
+
+
