@@ -29,7 +29,7 @@ add_filter('widget_text', 'do_shortcode');
 //---------------------------------------------
 //---------------------------------------------
 
-function tzo_sg_script_enqueuer() {
+function script_enqueuer_tzo() {
 	wp_register_script( 'fitvids', get_template_directory_uri().'/js/plugins/fitvids.js', array( 'jquery' ), '1.0', true );
 	wp_enqueue_script( 'fitvids' );
 
@@ -39,7 +39,7 @@ function tzo_sg_script_enqueuer() {
 	wp_register_style( 'screen', get_template_directory_uri().'/style.css', '', '2.0', 'all' );
 	wp_enqueue_style( 'screen' );
 }
-add_action( 'wp_enqueue_scripts', 'tzo_sg_script_enqueuer' );
+add_action( 'wp_enqueue_scripts', 'script_enqueuer_tzo' );
 
 
 // Define Menus
@@ -61,7 +61,7 @@ add_action( 'wp_enqueue_scripts', 'tzo_sg_script_enqueuer' );
 //---------------------------------------------
 //---------------------------------------------
 
-function tzo_widgets_init() {
+function widgets_init_tzo() {
 
 	register_sidebar(array(
 		'name' => __( 'Pages Sidebar' ),
@@ -83,7 +83,7 @@ function tzo_widgets_init() {
 		'after_title' => '</h3>',
 		));
 }
-add_action( 'widgets_init', 'tzo_widgets_init' );
+add_action( 'widgets_init', 'widgets_init_tzo' );
 
 // Define CPTs
 //---------------------------------------------
@@ -144,5 +144,5 @@ function starkers_comment( $comment, $args, $depth ) {
 	<?php endif;
 }
 
-// Not applicable
+// Internal use
 //get_template_parts( array( 'incs/admin/admin-login') );
