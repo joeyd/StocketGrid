@@ -1,16 +1,4 @@
 <?php
-
-//---------------------------------------------
-//---------------------------------------------
-// SECURITY NOTE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-// If you re not using a security plugin (Sucuri
-// is good) to harden WordPrss, be sure to
-// include the DISALLOW_FILE_EDIT to wp-config.php.
-// >> define( 'DISALLOW_FILE_EDIT', true );
-// END SECURITY NOTE!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//---------------------------------------------
-//---------------------------------------------
-
 // Support/filters
 //---------------------------------------------
 //---------------------------------------------
@@ -41,7 +29,6 @@ function script_enqueuer_tzo() {
 }
 add_action( 'wp_enqueue_scripts', 'script_enqueuer_tzo' );
 
-
 // Define Menus
 //---------------------------------------------
 //---------------------------------------------
@@ -55,7 +42,6 @@ add_action( 'wp_enqueue_scripts', 'script_enqueuer_tzo' );
 // Shortcodes
 //---------------------------------------------
 //---------------------------------------------
-
 
 // Define Sidebars
 //---------------------------------------------
@@ -89,18 +75,18 @@ add_action( 'widgets_init', 'widgets_init_tzo' );
 //---------------------------------------------
 //---------------------------------------------
 
-
-
-// Based on Starkers' Utilities/Functions
+// Help Functions Based on Starkers'
 //---------------------------------------------
 //---------------------------------------------
 
+// include template parts (/incs/)
 function get_template_parts( $parts = array() ) {
 	foreach( $parts as $part ) {
 		get_template_part( $part );
 	};
 }
 
+// add slug name as css class to body tag
 function add_slug_to_body_class( $classes ) {
 global $post;
 if( is_home() ) {
@@ -116,11 +102,13 @@ if( is_home() ) {
 return $classes;
 }
 
+// Function to get catgory/term id by name
 function get_category_id( $cat_name ){
 	$term = get_term_by( 'name', $cat_name, 'category' );
 	return $term->term_id;
 }
 
+// Function to get post ID by path
 function get_page_id_from_path( $path ) {
 	$page = get_page_by_path( $path );
 	if( $page ) {
@@ -144,5 +132,7 @@ function starkers_comment( $comment, $args, $depth ) {
 	<?php endif;
 }
 
-// Internal use
+// TZO USE
+//---------------------------------------------
+//---------------------------------------------
 //get_template_parts( array( 'incs/admin/admin-login') );

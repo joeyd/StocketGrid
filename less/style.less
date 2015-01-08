@@ -10,14 +10,14 @@ Tags:       clean, modern
 
 @import "reset.less";
 @import "oldbrowsers.less";
-@import "grid.less";
+@import "grid.less"; // Feel free to add your own grid or comment this out.
 @import "variables.less";
 @import "typography.less";
 @import "menu.less";
 @import "forms.less";
 @import "tables.less";
 @import "wordpress.less";
-@import "woocommerce-overrides.less";
+//@import "woocommerce-overrides.less";
 //@import "font-awesome.less";
 
 /*
@@ -26,13 +26,12 @@ __________________________________________________*/
 // Define container width
 .container {max-width: 960px; margin: 0 auto; overflow: hidden; }
 
-// Optionally Specify the number of columns and set column and gutter widths
+// Optionally specify the number of columns and set column and gutter widths
 @columns: 12;
 @column-width: 60;
 @gutter-width: 20;
 
-// Remove the definition below for a pixel-based layout
-@total-width: 100%;
+@total-width: 100%; // Remove the definition below for a pixel-based layout
 
 /*
 EXAMPLE USAGE STYLES
